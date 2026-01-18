@@ -59,12 +59,15 @@ export default function Comments({
             {movie_id == comment.movie_id ? (
               <div
                 key={comment.id}
-                className="flex flex-row gap-3 items-center justify-between"
+                className="flex flex-row items-center justify-evenly"
               >
                 {" "}
-                <h4>User Name: {comment.user_name}</h4>
-                <p>User Rating: {comment.rating}</p>
-                <p>User Comment: "{comment.comment}"</p>
+                <p className="underline">User Name:</p>
+                <p> {comment.user_name}</p>
+                <p className="underline">User Rating:</p>
+                <p> {comment.rating}</p>
+                <p className="underline">User Comment: </p>
+                <p>"{comment.comment}"</p>
                 <section className="flex flex-row gap-10">
                   {" "}
                   <section>
