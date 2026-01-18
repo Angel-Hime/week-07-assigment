@@ -4,6 +4,8 @@ This is a simple movie review app. I have a database of users and a database of 
 
 Users can like other comments and delete comments. If a user wishes to see only films of a certain genre, they can filter these.
 
+I think I made it so it goes a little slowly and my theory is that I used my home route as my movies page meaning that every time it goes to another route the movies component is still doing its call to fetch database data. I am not sure of this though.
+
 REFLECTION
 
 Sorry that I never clean my code up afterwards, I ran out of time this go around as I have been super busy over the weekend. In the past, this has been essentially the same but I wanted to acknowledge it because I know that it is poor form.
@@ -12,7 +14,7 @@ Getting to the main reflectiong, I think that I implemented everything in the re
 
 I struggled with the routing in some features, such as the category routing. I still wasn't able to make this smooth, which I would like to get some feedback on please.
 
-I wanted to use routing for the likes and delete features but I wasn't sure how was best to do this, so I completed it differently.
+I wanted to use routing for the likes and delete features but I wasn't sure how was best to do this, so I completed it differently. I wasn't sure how to set the params or useState and, in the same function, complete the http method so that the server would pick it up correctly.
 
 REQUIREMENTS AND STRETCH GOALS
 
@@ -56,7 +58,7 @@ REQUIREMENTS AND STRETCH GOALS
 
 🏹 Use react-router to create a dedicated route for the categories --> For example, /posts/:categoryName.
 
-    -
+✔️ - my routing system has this syntax but it I am not sure if it was correctly implemented
 
 🏹 Allow users to delete posts.
 
@@ -68,21 +70,21 @@ REQUIREMENTS AND STRETCH GOALS
 
 🏹 Create additional SQL queries to show filtered posts.
 
-    - SELECT... WHERE genre = X --> using placeholders from a sorting drop down and useParams
+✔️ - SELECT... WHERE genre = X --> using placeholders from a sorting drop down and useParams
 
 SOURCES AND ATTRIBUTIONS
 
 favicon
-<a href="https://www.flaticon.com/free-icons/watch-movie" title="watch-movie icons">Watch-movie icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/stage" title="stage icons">Stage icons created by Freepik - Flaticon</a>
 
 show comments
-<a href="https://www.flaticon.com/free-icons/comment" title="comment icons">Comment icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/followers" title="followers icons">Followers icons created by Secret Studio - Flaticon</a>
 
 write comment
-<a href="https://www.flaticon.com/free-icons/write-review" title="write review icons">Write review icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/blog" title="blog icons">Blog icons created by Freepik - Flaticon</a>
 
-favourite
-<a href="https://www.flaticon.com/free-icons/favourite" title="favourite icons">Favourite icons created by Freepik - Flaticon</a>
+like / favourite
+<a href="https://www.flaticon.com/free-icons/wishlist" title="wishlist icons">Wishlist icons created by sonnycandra - Flaticon</a>
 
 delete
-<a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Freepik - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/delete" title="delete icons">Delete icons created by Ilham Fitrotul Hayat - Flaticon</a>

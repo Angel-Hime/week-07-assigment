@@ -4,7 +4,9 @@ export default function useFetchUsers({ setUserData }) {
   useEffect(() => {
     // you can always get this with useParams and a variable
     async function getData() {
-      const response = await fetch(`http://localhost:8080/comments`);
+      const response = await fetch(
+        `https://week-07-assigment-server.onrender.com/comments`,
+      );
       // console.log(response);
       const data = await response.json();
       console.log(data);

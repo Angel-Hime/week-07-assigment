@@ -1,7 +1,6 @@
-import { Link, Outlet, useParams } from "react-router";
+import { useParams } from "react-router";
 import useFetchUsers from "../utils/useFetchUsers";
 import NewCommentModal from "./NewCommentModal";
-import { Fragment, useState } from "react";
 
 // TODO: render data from database
 
@@ -13,7 +12,7 @@ export default function Comments({
 }) {
   const { movie_id } = useParams();
   //
-  const [deleteData, setDeleteData] = useState({});
+
   // get comments data
   useFetchUsers({ setUserData });
   // test data
@@ -65,7 +64,7 @@ export default function Comments({
                 {" "}
                 <h4>User Name: {comment.user_name}</h4>
                 <p>User Rating: {comment.rating}</p>
-                <p>User Comment: {comment.comment}</p>
+                <p>User Comment: "{comment.comment}"</p>
                 <section className="flex flex-row gap-10">
                   {" "}
                   <section>
@@ -74,11 +73,11 @@ export default function Comments({
                     <button
                       className=" bg-[#46424269] rounded-sm cursor-pointer 
           hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl  focus:drop-shadow-gray-700   "
                       onClick={() => handleLike(comment)}
                     >
                       <img
-                        className="w-20 p-2 z-100"
+                        className="w-20  z-100"
                         src="/icons/favourite.png"
                         alt="show comments"
                       />
@@ -87,11 +86,11 @@ export default function Comments({
                     <button
                       className=" bg-[#46424269] rounded-sm cursor-pointer 
           hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700  h-fit "
                       onClick={() => handleDelete(comment)}
                     >
                       <img
-                        className="w-20 p-2 z-100"
+                        className="w-20  z-100"
                         src="/icons/delete.png"
                         alt="show comments"
                       />
@@ -106,10 +105,10 @@ export default function Comments({
       <button
         className=" bg-[#46424269] rounded-sm cursor-pointer 
           hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700  "
       >
         <img
-          className="w-20 p-2 z-100"
+          className="w-30 z-100"
           src="/icons/write-comment.png"
           alt="show comments"
           onClick={() => handleAddComment()}

@@ -1,7 +1,7 @@
 import { Outlet, useParams, Link } from "react-router";
 
 export default function MoviePage({ movieSelect }) {
-  const { id, comments } = useParams();
+  const { comments } = useParams();
   console.log(comments);
   // console.log(`Movie Select id: ${id}`);
   // console.log(`Movie Select movie:${movieSelect.film_name}`);
@@ -14,7 +14,7 @@ export default function MoviePage({ movieSelect }) {
       <section className="grid grid-cols-3 grid-rows-3 content-center items-center">
         <div className="col-start-1 col-end-3 row-start-1 row-end-2 grid grid-cols-2 grid-rows-1 justify-items-center items-center">
           <img
-            className="w-50"
+            className="w-150"
             src={movieSelect.poster_url}
             alt={movieSelect.poster_alt}
           />
@@ -35,7 +35,7 @@ export default function MoviePage({ movieSelect }) {
           focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
               >
                 <img
-                  className="w-20 p-2 z-100"
+                  className="w-50 p-2 z-100"
                   src="/icons/show-comments.png"
                   alt="show comments"
                 />
@@ -53,7 +53,7 @@ export default function MoviePage({ movieSelect }) {
           focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
                 >
                   <img
-                    className="w-20 p-2 z-100"
+                    className="w-50 p-2 z-100"
                     src="/icons/show-comments.png"
                     alt="show comments"
                   />

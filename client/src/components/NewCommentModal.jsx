@@ -25,7 +25,7 @@ export default function NewCommentModal({ setModalOpen }) {
         formValues.movie_id,
     );
     // try {
-    fetch("http://localhost:8080/new-comment", {
+    fetch("https://week-07-assigment-server.onrender.com/new-comment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
