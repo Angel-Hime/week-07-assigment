@@ -50,7 +50,7 @@ export default function Comments({
   }
 
   return (
-    <section className="col-start-1 col-end-4 row-start-2 row-span-2 self-center">
+    <section className="col-start-1 col-end-4 row-start-2 row-span-2 grid-cols-4 grid-rows-1 content-center">
       <h2>Comments</h2>
 
       {userData.values &&
