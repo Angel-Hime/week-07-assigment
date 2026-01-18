@@ -9,8 +9,6 @@ export default function MoviePage({ movieSelect }) {
   const [releaseDate] = splitDate.split("T");
   return (
     <>
-      <h2>Movie</h2>
-
       <section className="grid grid-cols-3 grid-rows-3 content-center items-center">
         <div className="col-start-1 col-end-3 row-start-1 row-end-2 grid grid-cols-2 grid-rows-1 justify-items-center items-center">
           <img

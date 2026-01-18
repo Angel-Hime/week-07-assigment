@@ -50,14 +50,17 @@ export default function Comments({
   }
 
   return (
-    <section className="col-start-1 col-end-4 row-start-2 row-span-2 grid-cols-4 grid-rows-1 content-center">
-      <h2>Comments</h2>
+    <section className="col-start-1 col-end-4 row-start-2 row-span-2 grid-cols-4 grid-rows-1 self-start">
+      <h2 className="text-3xl">Comments</h2>
 
       {userData.values &&
         userData.map((comment) => (
           <>
             {movie_id == comment.movie_id ? (
-              <div key={comment.id} className="flex flex-row gap-3">
+              <div
+                key={comment.id}
+                className="flex flex-row gap-3 items-center justify-between"
+              >
                 {" "}
                 <h4>User Name: {comment.user_name}</h4>
                 <p>User Rating: {comment.rating}</p>
