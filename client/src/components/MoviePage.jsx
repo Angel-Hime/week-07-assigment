@@ -17,10 +17,12 @@ export default function MoviePage({ movieSelect }) {
             alt={movieSelect.poster_alt}
           />
           <section>
-            <h2>{movieSelect.film_name}</h2>
-            <p>{movieSelect.genre}</p>
-            <p>{movieSelect.director}</p>
-            <p>{releaseDate}</p>
+            <h2 className="text-2xl text-shadow-2xs text-shadow-black">
+              {movieSelect.film_name}
+            </h2>
+            <p>Genre: {movieSelect.genre}</p>
+            <p>Director: {movieSelect.director}</p>
+            <p>Realease Date: {releaseDate}</p>
           </section>
         </div>
 
