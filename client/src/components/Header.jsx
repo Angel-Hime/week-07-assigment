@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function Header() {
   return (
     <>
-      <header className=" w-screen row-start-1 row-end-2 h-20 grid grid-cols-5 justify-items-center items-center z-50">
+      <header className=" w-screen row-start-1 row-end-2 h-100 grid grid-cols-5 justify-items-center items-center z-50">
         <img
           className="h-50 col-start-1 col-end-2"
           src="/icons/watch-movie.png"
