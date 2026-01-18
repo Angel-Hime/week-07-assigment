@@ -50,17 +50,14 @@ export default function Comments({
   }
 
   return (
-    <div className="col-start-1 col-end-4 row-start-2 row-span-2">
+    <section className="col-start-1 col-end-4 row-start-2 row-span-2 self-center">
       <h2>Comments</h2>
 
       {userData.values &&
         userData.map((comment) => (
           <>
             {movie_id == comment.movie_id ? (
-              <div
-                key={comment.id}
-                className="col-start-1 col-end-4 flex flex-row gap-3"
-              >
+              <div key={comment.id} className="flex flex-row gap-3">
                 {" "}
                 <h4>User Name: {comment.user_name}</h4>
                 <p>User Rating: {comment.rating}</p>
@@ -117,6 +114,6 @@ export default function Comments({
       {isModalOpen ? <NewCommentModal setModalOpen={setModalOpen} /> : null}
 
       {/*  */}
-    </div>
+    </section>
   );
 }
