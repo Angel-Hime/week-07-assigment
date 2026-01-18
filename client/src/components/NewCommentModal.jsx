@@ -114,9 +114,9 @@ export default function NewCommentModal({ setModalOpen }) {
           {/*  */}
           <button
             type="submit"
-            className="col-start-3 col-end-4 bg-[#d8d0d0cf] pl-2 pr-2 rounded-2xl cursor-pointer 
-            hover:bg-[#d8d0d0] hover:shadow-2xl hover:shadow-violet-500 
-              focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 focus:shadow-2xl     focus:shadow-violet-500 text-sm md:w-20"
+            className="col-start-2 col-end-4 bg-[#d8d0d0cf] pl-2 pr-2 rounded-2xl cursor-pointer 
+            hover:bg-[#d8d0d0] hover:shadow-2xl hover:shadow-gray-900 
+              focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:shadow-2xl     focus:shadow-gray-900 text-sm md:w-20"
           >
             submit
           </button>

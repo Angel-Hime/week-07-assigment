@@ -10,6 +10,7 @@ import Comments from "./components/Comments";
 import NotFoundPage from "./components/NotFoundPage";
 import Header from "./components/Header";
 import { useState } from "react";
+import MoviesByGenre from "./components/MoviesByGenre";
 // TODO: set up routing system and import relevant component for each route
 // ! have component for root route and a not found page
 
@@ -20,6 +21,7 @@ export default function App() {
   const [userData, setUserData] = useState({});
   const [isModalOpen, setModalOpen] = useState(false);
   const [movieSelect, setMovieSelect] = useState({});
+  const [genreChoice, setGenreChoice] = useState({});
 
   const { id } = useParams();
   return (
@@ -47,7 +49,23 @@ export default function App() {
             }
           />
           <Route
-            path={":movies/:movie_id"}
+            path={"/genre/:genre"}
+            element={
+              <MoviesByGenre
+                genreChoice={genreChoice}
+                setGenreChoice={setGenreChoice}
+                movieData={movieData}
+                setMovieData={setMovieData}
+                movieSelect={movieSelect}
+                setMovieSelect={setMovieSelect}
+              />
+            }
+            // if this is a dynamic route the ':genre' bit changes
+            // if I create one additional component and give it the movieData stuff but within it searchPArams.get
+            //  which each use different fetch components
+          />
+          <Route
+            path={"/movieselection/:movie_id"}
             element={
               <MoviePage
                 movieData={movieData}

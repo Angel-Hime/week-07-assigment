@@ -13,7 +13,11 @@ export default function MoviePage({ movieSelect }) {
 
       <section className="grid grid-cols-3 grid-rows-3 content-center items-center">
         <div className="col-start-1 col-end-3 row-start-1 row-end-2 grid grid-cols-2 grid-rows-1 justify-items-center items-center">
-          <img className="w-50" src={movieSelect.poster_url} alt="." />
+          <img
+            className="w-50"
+            src={movieSelect.poster_url}
+            alt={movieSelect.poster_alt}
+          />
           <section>
             <h2>{movieSelect.film_name}</h2>
             <p>{movieSelect.genre}</p>
@@ -27,8 +31,8 @@ export default function MoviePage({ movieSelect }) {
             <Link to={`comments`}>
               <button
                 className=" bg-[#46424269] rounded-sm cursor-pointer 
-          hover:drop-shadow-2xl hover:drop-shadow-violet-500 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 focus:drop-shadow-2xl     focus:drop-shadow-violet-500 w-max h-max"
+          hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
               >
                 <img
                   className="w-20 p-2 z-100"
@@ -45,8 +49,8 @@ export default function MoviePage({ movieSelect }) {
               <Link to={` `}>
                 <button
                   className=" bg-[#46424269] rounded-sm cursor-pointer 
-          hover:drop-shadow-2xl hover:drop-shadow-violet-500 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 focus:drop-shadow-2xl     focus:drop-shadow-violet-500 w-max h-max"
+          hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
                 >
                   <img
                     className="w-20 p-2 z-100"

@@ -1,10 +1,18 @@
 Database Driven Full Stack React & Express App
 
-This is a simple movie review app. I have a database of users and a database of movies which are displayed in a list with a poster. The user can navigate onto the movie page and leave a comment, where it will be added to the database and show on the app.
+This is a simple movie review app. I have a database of users and a database of movies which are displayed in a list with a poster. The user can navigate onto the movie page and click the comments button, which will toggle to view the comments for the individual movie. Users can also leave a comment of their own, as indicated by the comment button and the modal that loads once the button is pressed. The new comment will be added to the database and show on the app.
 
 Users can like other comments and delete comments. If a user wishes to see only films of a certain genre, they can filter these.
 
 REFLECTION
+
+Sorry that I never clean my code up afterwards, I ran out of time this go around as I have been super busy over the weekend. In the past, this has been essentially the same but I wanted to acknowledge it because I know that it is poor form.
+
+Getting to the main reflectiong, I think that I implemented everything in the requirements and stretch goals but I must admit that I just had no idea what to do in terms of styling and I pushed, so I left it mostly in the realms of brutalist methodology, keeping everything black and white, retaining only necessary features and text, with a few icons for UX.
+
+I struggled with the routing in some features, such as the category routing. I still wasn't able to make this smooth, which I would like to get some feedback on please.
+
+I wanted to use routing for the likes and delete features but I wasn't sure how was best to do this, so I completed it differently.
 
 REQUIREMENTS AND STRETCH GOALS
 

@@ -2,9 +2,9 @@ import { useEffect } from "react";
 
 export default function useFetchUsers({ setUserData }) {
   useEffect(() => {
-    const page = `/comments`; // you can always get this with useParams and a variable
+    // you can always get this with useParams and a variable
     async function getData() {
-      const response = await fetch(`http://localhost:8080${page}`);
+      const response = await fetch(`http://localhost:8080/comments`);
       // console.log(response);
       const data = await response.json();
       console.log(data);

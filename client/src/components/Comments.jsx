@@ -60,13 +60,12 @@ export default function Comments({
             {movie_id == comment.movie_id ? (
               <div
                 key={comment.id}
-                className="col-start-1 col-end-4 flex flex-row"
+                className="col-start-1 col-end-4 flex flex-row gap-3"
               >
                 {" "}
                 <h4>User Name: {comment.user_name}</h4>
                 <p>User Rating: {comment.rating}</p>
                 <p>User Comment: {comment.comment}</p>
-                <p>id: {comment.id}</p>
                 <section className="flex flex-row gap-10">
                   {" "}
                   <section>
@@ -74,8 +73,8 @@ export default function Comments({
 
                     <button
                       className=" bg-[#46424269] rounded-sm cursor-pointer 
-          hover:drop-shadow-2xl hover:drop-shadow-violet-500 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 focus:drop-shadow-2xl     focus:drop-shadow-violet-500 w-max h-max "
+          hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
                       onClick={() => handleLike(comment)}
                     >
                       <img
@@ -87,8 +86,8 @@ export default function Comments({
 
                     <button
                       className=" bg-[#46424269] rounded-sm cursor-pointer 
-          hover:drop-shadow-2xl hover:drop-shadow-violet-500 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 focus:drop-shadow-2xl     focus:drop-shadow-violet-500 w-max h-max "
+          hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
                       onClick={() => handleDelete(comment)}
                     >
                       <img
@@ -106,8 +105,8 @@ export default function Comments({
 
       <button
         className=" bg-[#46424269] rounded-sm cursor-pointer 
-          hover:drop-shadow-2xl hover:drop-shadow-violet-500 hover:bg-[#cbc2c269]
-          focus:outline-2 focus:outline-offset-2 focus:outline-violet-500 focus:drop-shadow-2xl     focus:drop-shadow-violet-500 w-max h-max "
+          hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
+          focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:drop-shadow-2xl     focus:drop-shadow-gray-700 w-max h-max "
       >
         <img
           className="w-20 p-2 z-100"

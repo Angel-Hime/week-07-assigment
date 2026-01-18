@@ -125,12 +125,12 @@ app.put("/like-comment/:id", (req, res) => {
 });
 
 // TODO: FILTER / GET ROUTE
-app.get("/movies:category", async (req, res) => {
-  const { category } = req.params;
+app.get("/movies:genre", async (req, res) => {
+  const { genre } = req.params;
   try {
     const query = await db.query(
       "SELECT movie_table.* FROM movie_table WHERE genre = $1",
-      [category],
+      [genre],
     );
     //   Debug to see if we are getting the data:
     //   console.log(query);
@@ -143,23 +143,3 @@ app.get("/movies:category", async (req, res) => {
     res.status(500).json({ response: "fail" });
   }
 });
-
-// TODO: Add movie / POST ROUTE
-
-// TODO: update movie/ PUT ROUTE
-// app.put("/update-movie/:id", (req, res) => {
-//   // const  = req.body;
-
-//   try {
-//     const query = db.query(
-//       `UPDATE movie_table SET x = $1, x = $2, x = $3, x = $4, x = $5 WHERE id = $6`,
-//       [
-//         //  variables from the form
-//       ],
-//     );
-//     res.status(200).json({ request: "success" });
-//   } catch (strays) {
-//     console.error(strays, "Response failed. Debug...");
-//     res.status(500).json({ response: "fail" });
-//   }
-// });
