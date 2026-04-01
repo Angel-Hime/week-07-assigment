@@ -1,13 +1,14 @@
 import { Link, useParams } from "react-router";
 import useGenreFetch from "../utils/useGenreFetch";
 import GenreNav from "./GenreNav";
+import Header from "./Header";
 
 export default function MoviesByGenre({
   setMovieData,
   movieData,
 
   // setMovieSelect,
-  // setIsModalOpen,
+  // setModalOpen,
   // isModalOpen,
 }) {
   useGenreFetch({ setMovieData });
@@ -23,9 +24,12 @@ export default function MoviesByGenre({
   const pageTitle = genre.toString();
 
   return (
-    <section className="mt-40">
-      <GenreNav />
-      <div>{pageTitle}</div>
+    <main className="w-screen overflow-x-hidden flex flex-col gap-20 ">
+      <header className="flex flex-col h-max gap-1">
+        <Header />
+        <GenreNav />
+      </header>
+      <h2 className="text-2xl underline">{pageTitle}</h2>
       <div className="flex flex-row items-center gap-10 flex-wrap justify-center">
         {" "}
         {movieData.values &&
@@ -37,7 +41,7 @@ export default function MoviesByGenre({
             >
               <img
                 key={movie.id}
-                className="w-150 hover:shadow-2xl hover:shadow-gray-900 
+                className="w-150 h-200 hover:shadow-2xl hover:shadow-gray-900 
               focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:shadow-2xl     focus:shadow-gray-900"
                 src={movie.poster_url}
                 alt={movie.poster_alt}
@@ -45,6 +49,7 @@ export default function MoviesByGenre({
             </Link>
           ))}{" "}
       </div>
-    </section>
+      <footer className="h-10"></footer>
+    </main>
   );
 }

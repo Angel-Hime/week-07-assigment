@@ -26,30 +26,26 @@ export default function Movies({
   // console.log(searchParams);
 
   return (
-    <main className="grid grid-cols-1 grid-rows-2 justify-items-center overflow-x-hidden">
-      <section className="mt-40 justify-center">
-        <header>
-          <Header />
-        </header>
-        <GenreNav />{" "}
-        <section className="row-start-2 row-end-3 grid grid-cols-1">
-          <div className="flex flex-row items-center gap-10 flex-wrap ">
-            {" "}
-            {movieData.values &&
-              movieData.map((movie) => (
-                <Link key={movie.id} to={`/movieselection/${movie.id}`}>
-                  <img
-                    key={movie.id}
-                    className="w-150 hover:shadow-2xl hover:shadow-gray-900 
+    <main className="w-screen overflow-x-hidden flex flex-col gap-20 ">
+      <header className="flex flex-col h-max gap-1">
+        <Header />
+        <GenreNav />
+      </header>
+      <section className="flex flex-row justify-center gap-10 flex-wrap">
+        {movieData.values &&
+          movieData.map((movie) => (
+            <Link key={movie.id} to={`/movieselection/${movie.id}`}>
+              <img
+                key={movie.id}
+                className="w-150 h-200 hover:shadow-2xl hover:shadow-gray-900 
               focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:shadow-2xl     focus:shadow-gray-900"
-                    src={movie.poster_url}
-                    alt={movie.poster_alt}
-                  />
-                </Link>
-              ))}{" "}
-          </div>
-        </section>
+                src={movie.poster_url}
+                alt={movie.poster_alt}
+              />
+            </Link>
+          ))}
       </section>
+      <footer className="h-10"></footer>
     </main>
   );
 }

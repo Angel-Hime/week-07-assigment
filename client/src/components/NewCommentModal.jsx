@@ -15,7 +15,7 @@ export default function NewCommentModal({ setModalOpen }) {
 
   function handleInputChange(event) {
     setFormValues({ ...formValues, [event.target.name]: event.target.value });
-    console.log(formValues);
+    // console.log(formValues);
   }
 
   function handleFormSubmit(event) {
@@ -26,18 +26,18 @@ export default function NewCommentModal({ setModalOpen }) {
     //     formValues.comment +
     //     formValues.movie_id,
     // );
-    // try {
-    fetch("https://week-07-assigment-server.onrender.com/new-comment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formValues),
-    });
-    // console.log(formValues);
-    // } catch (strays) {
-    //   console.error(strays, "Request failed. Debug...");
-    // }
+    try {
+      fetch("https://week-07-assigment-server.onrender.com/new-comment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+      // console.log(formValues);
+    } catch (strays) {
+      console.error(strays, "Request failed. Debug...");
+    }
     setModalOpen(false);
   }
 
@@ -46,13 +46,24 @@ export default function NewCommentModal({ setModalOpen }) {
       setModalOpen(false);
     }
   };
+
   return (
     <>
       <div
-        className="relative z-1000 h-150 rounded-2xl mt-5 shadow-2xl shadow-violet-300 
+        className="fixed top-40 left-2/8 z-1000 h-150 w-4/8 rounded-2xl mt-5 shadow-2xl shadow-violet-300 bg-gray-500
     drop-shadow-x drop-shadow-violet-300
-    grid grid-cols-2 grid-rows-3 items-center justify-items-center overflow-y-scroll overflow-x-hidden   scroll-smooth"
+    grid grid-cols-2 grid-rows-3 items-center justify-items-center overflow-y-scroll overflow-x-hidden scroll-smooth"
       >
+        <span className="col-start-1 col-end-2 row-start-1 justify-self-start self-start content-center h-20 w-50">
+          <button
+            onClick={() => setModalOpen(false)}
+            className="h-10  bg-gray-300 rounded-2xl cursor-pointer m-1 p-1 text-center w-40 border-2 border-gray-600 
+            hover:outline-2 hover:outline-gray-600 hover:border-gray-300 hover:bg-[#e9e6e6] hover:shadow-inner  hover:shadow-gray-600
+              focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:shadow-2xl     focus:shadow-gray-900 text-sm "
+          >
+            Close
+          </button>
+        </span>
         <h2 className="col-start-1 col-end-3 row-start-1 row-end-2 text-2xl">
           Leave A Comment Below!
         </h2>
@@ -65,7 +76,7 @@ export default function NewCommentModal({ setModalOpen }) {
             htmlFor="userName"
             className="col-start-1 col-end-2 justify-self-end"
           >
-            Name
+            Name:
           </label>{" "}
           <input
             type="text"
@@ -74,14 +85,14 @@ export default function NewCommentModal({ setModalOpen }) {
             required
             onChange={handleInputChange}
             placeholder="Please provide a name..."
-            className="min-h-20 max-h-20 w-vw md:w-vw p-2 rounded-2xl col-start-2 col-end-3 border-2 border-gray-600 hover:drop-shadow-2xl hover:drop-shadow-gray-600 hover:shadow-inner  hover:shadow-gray-600"
+            className="min-h-10 max-h-20 w-150 md:w-vw p-2 rounded-2xl col-start-2 col-end-3 border-2 bg-gray-300 border-gray-600 justify-self-center hover:drop-shadow-2xl hover:drop-shadow-gray-600 hover:shadow-inner  hover:shadow-gray-600"
           ></input>
           {/*  */}
           <label
             htmlFor="rating"
-            className="col-start-1 col-end-2  justify-self-end"
+            className="col-start-1 col-end-2 justify-self-end"
           >
-            Rating
+            Rating:
           </label>{" "}
           <select
             type="number"
@@ -91,9 +102,9 @@ export default function NewCommentModal({ setModalOpen }) {
             value={formValues.rating}
             required
             onChange={handleInputChange}
-            className=" w-1 md:w-vw p-2 rounded-2xl col-start-2 col-end-3 border-2 border-gray-600 hover:shadow-inner  hover:shadow-gray-600"
+            className="h-10 w-20 md:w-vw p-2 rounded-2xl col-start-2 col-end-3 border-2 justify-self-center bg-gray-300 cursor-pointer border-gray-600 hover:shadow-inner  hover:shadow-gray-600 "
           >
-            <option disabled>Select...</option>
+            {" "}
             <option value={0}>0</option>
             <option value={1}>1</option>
             <option value={2}>2</option>
@@ -109,9 +120,9 @@ export default function NewCommentModal({ setModalOpen }) {
           {/*  */}
           <label
             htmlFor="comment"
-            className="col-start-1 col-end-2  justify-self-end"
+            className="col-start-1 col-end-2 justify-self-end"
           >
-            Comment
+            Comment:
           </label>{" "}
           <textarea
             type="text"
@@ -120,13 +131,13 @@ export default function NewCommentModal({ setModalOpen }) {
             required
             onChange={handleInputChange}
             placeholder="Leave your comment here..."
-            className="min-h-20 max-h-20 w-vw md:w-vw p-2 rounded-2xl col-start-2 col-end-3 border-2 border-gray-600 hover:shadow-inner  hover:shadow-gray-600"
+            className="min-h-10 max-h-20 w-150 md:w-vw p-2 rounded-2xl col-start-2 col-end-3 border-2 bg-gray-300 border-gray-600 justify-self-center hover:shadow-inner  hover:shadow-gray-600"
           ></textarea>
           {/*  */}
           <button
             type="submit"
-            className="col-start-3 col-end-4 row-start-4 bg-[#d8d0d0cf]  rounded-2xl cursor-pointer m-1 p-1 text-center
-            hover:bg-[#d8d0d0] hover:shadow-2xl hover:shadow-gray-900 w-40
+            className="h-10 col-start-3 col-end-4 row-start-4 bg-gray-300 rounded-2xl cursor-pointer m-1 p-1 text-center w-40 border-2 border-gray-600
+            hover:outline-2 hover:outline-gray-600 hover:border-gray-300 hover:bg-[#e9e6e6] hover:shadow-inner  hover:shadow-gray-600
               focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:shadow-2xl     focus:shadow-gray-900 text-sm "
           >
             submit

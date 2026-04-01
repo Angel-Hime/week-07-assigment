@@ -20,7 +20,7 @@ export default function App() {
   const [movieData, setMovieData] = useState({});
   const [userData, setUserData] = useState({});
   const [isModalOpen, setModalOpen] = useState(false);
-  const [movieSelect, setMovieSelect] = useState({});
+  // const [movieSelect, setMovieSelect] = useState({});
   const [genreChoice, setGenreChoice] = useState({});
 
   return (
@@ -37,8 +37,8 @@ export default function App() {
               <Movies
                 movieData={movieData}
                 setMovieData={setMovieData}
-                movieSelect={movieSelect}
-                setMovieSelect={setMovieSelect}
+                // movieSelect={movieSelect}
+                // setMovieSelect={setMovieSelect}
               />
             }
           />
@@ -50,8 +50,8 @@ export default function App() {
               <Movies
                 movieData={movieData}
                 setMovieData={setMovieData}
-                movieSelect={movieSelect}
-                setMovieSelect={setMovieSelect}
+                // movieSelect={movieSelect}
+                // setMovieSelect={setMovieSelect}
               />
             }
           />
@@ -63,8 +63,8 @@ export default function App() {
                 setGenreChoice={setGenreChoice}
                 movieData={movieData}
                 setMovieData={setMovieData}
-                movieSelect={movieSelect}
-                setMovieSelect={setMovieSelect}
+                // movieSelect={movieSelect}
+                // setMovieSelect={setMovieSelect}
               />
             }
             // if this is a dynamic route the ':genre' bit changes
@@ -77,8 +77,9 @@ export default function App() {
               <MoviePage
                 setMovieData={setMovieData}
                 movieData={movieData}
-                movieSelect={movieSelect}
-                setMovieSelect={setMovieSelect}
+                setModalOpen={setModalOpen}
+                // movieSelect={movieSelect}
+                // setMovieSelect={setMovieSelect}
               />
             }
           >
