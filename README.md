@@ -6,9 +6,7 @@ __Project Overview__
 
 This is a simple movie review app. I have a database of users and a database of movies which are displayed in a list with a poster. The user can navigate onto the movie page and click the comments button, which will toggle to view the comments for the individual movie. Users can also leave a comment of their own, as indicated by the comment button and the modal that loads once the button is pressed. The new comment will be added to the database and show on the app.
 
-Users can like other comments and delete comments. If a user wishes to see only films of a certain genre, they can filter these.
-
-I think I made it so it goes a little slowly and my theory is that I used my home route as my movies page meaning that every time it goes to another route the movies component is still doing its call to fetch database data. I am not sure of this though.
+Users can like other comments and delete comments. If a user wishes to see only films of a certain genre, they can filter these using the links provided on the root route and genre routes.
 
 __Reflection__
 
