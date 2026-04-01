@@ -7,23 +7,25 @@ export default function NewCommentModal({ setModalOpen }) {
   const { movie_id } = useParams();
 
   const [formValues, setFormValues] = useState({
-    userName: "",
+    userName: " ",
     rating: Number(""),
-    comment: "",
+    comment: " ",
     movie_id: Number(`${movie_id}`),
   });
+
   function handleInputChange(event) {
     setFormValues({ ...formValues, [event.target.name]: event.target.value });
+    console.log(formValues);
   }
 
   function handleFormSubmit(event) {
     event.preventDefault();
-    alert(
-      formValues.userName +
-        formValues.rating +
-        formValues.comment +
-        formValues.movie_id,
-    );
+    // alert(
+    //   formValues.userName +
+    //     formValues.rating +
+    //     formValues.comment +
+    //     formValues.movie_id,
+    // );
     // try {
     fetch("https://week-07-assigment-server.onrender.com/new-comment", {
       method: "POST",

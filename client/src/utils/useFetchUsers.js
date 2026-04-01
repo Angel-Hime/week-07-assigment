@@ -9,7 +9,7 @@ export default function useFetchUsers({ setUserData }) {
       );
       // console.log(response);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       setUserData(data);
     }
     getData();

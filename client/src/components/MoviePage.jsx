@@ -1,14 +1,24 @@
 import { Outlet, useParams, Link } from "react-router";
+import Header from "./Header";
+import useMovieFetch from "../utils/useMovieFetch";
 
-export default function MoviePage({ movieSelect }) {
+export default function MoviePage({ movieSelect, setMovieData, movieData }) {
   const { comments } = useParams();
-  console.log(comments);
-  // console.log(`Movie Select id: ${id}`);
-  // console.log(`Movie Select movie:${movieSelect.film_name}`);
+
   const splitDate = movieSelect.release_date;
-  const [releaseDate] = splitDate.split("T");
+  let releaseDate;
+
+  if (releaseDate) {
+    releaseDate = splitDate.split("T");
+  }
+
+  useMovieFetch({ setMovieData });
+  console.log(movieData);
   return (
     <>
+      <header>
+        <Header />
+      </header>
       <section className="grid grid-cols-3 grid-rows-3 content-center items-center">
         <div className="col-start-1 col-end-3 row-start-1 row-end-2 grid grid-cols-2 grid-rows-1 justify-items-center items-center">
           <img
@@ -28,7 +38,7 @@ export default function MoviePage({ movieSelect }) {
 
         {comments != "comments" ? (
           <nav className="col-start-3 col-end-4">
-            <Link to={`comments`}>
+            <Link to={`comments/#comments`}>
               <button
                 className=" bg-[#46424269] rounded-sm cursor-pointer 
           hover:drop-shadow-2xl hover:drop-shadow-gray-900 hover:bg-[#cbc2c269]
@@ -43,7 +53,7 @@ export default function MoviePage({ movieSelect }) {
             </Link>
           </nav>
         ) : null}
-        {comments == "comments" ? (
+        {comments === "comments" ? (
           <>
             <nav className="col-start-3 col-end-4">
               <Link to={` `}>

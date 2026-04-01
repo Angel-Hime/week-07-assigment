@@ -34,7 +34,7 @@ app.get("/movies", async (req, res) => {
     //   wrangle the data with dot notation
     res.json(query.rows);
     //   Debug to see if our wrangling is correct:
-    console.log(query.rows);
+    // console.log(query.rows);
   } catch (strays) {
     console.error(strays, "Response failed. Debug...");
     res.status(500).json({ response: "fail" });
@@ -63,7 +63,7 @@ app.get("/comments", async (req, res) => {
 app.post("/new-comment", (req, res) => {
   try {
     const newComment = req.body;
-    console.log(newComment);
+    // console.log(newComment);
     const query = db.query(
       `INSERT INTO movie_comments (user_name, rating, comment, movie_id) VALUES ($1, $2, $3, $4) RETURNING *`,
       [
@@ -73,7 +73,7 @@ app.post("/new-comment", (req, res) => {
         newComment.movie_id, // get this from useParams when completing the form?
       ],
     );
-    console.log(query);
+    // console.log(query);
     res.status(200).json({ request: "success" });
   } catch (strays) {
     console.error(strays, "Request failed. Debug...");
@@ -86,7 +86,7 @@ app.post("/new-comment", (req, res) => {
 // TODO: DELETE ROUTE
 app.delete("/delete-comment/:id", (req, res) => {
   const data = req.body;
-  console.log(data);
+  // console.log(data);
   try {
     const query = db.query(
       `DELETE FROM movie_comments WHERE id = $1 RETURNING *`,
@@ -103,7 +103,7 @@ app.delete("/delete-comment/:id", (req, res) => {
 app.put("/like-comment/:id", (req, res) => {
   const updatedComment = req.body;
   updatedComment.comment_likes = updatedComment.comment_likes + 1;
-  console.log(updatedComment);
+  // console.log(updatedComment);
 
   try {
     const query = db.query(
@@ -138,6 +138,26 @@ app.get("/movies:genre", async (req, res) => {
     res.json(query.rows);
     //   Debug to see if our wrangling is correct:
     //   console.log(query.rows);
+  } catch (strays) {
+    console.error(strays, "Response failed. Debug...");
+    res.status(500).json({ response: "fail" });
+  }
+});
+
+app.get("/movieselection/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  try {
+    const query = await db.query(
+      "SELECT movie_table.* FROM movie_table WHERE movie_table.id = $1",
+      [id],
+    );
+    //   Debug to see if we are getting the data:
+    console.log(query);
+    //   wrangle the data with dot notation
+    res.json(query.rows);
+    //   Debug to see if our wrangling is correct:
+    console.log(query.rows);
   } catch (strays) {
     console.error(strays, "Response failed. Debug...");
     res.status(500).json({ response: "fail" });

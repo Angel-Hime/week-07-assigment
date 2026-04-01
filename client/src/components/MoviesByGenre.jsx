@@ -6,28 +6,34 @@ export default function MoviesByGenre({
   setMovieData,
   movieData,
 
-  setMovieSelect,
+  // setMovieSelect,
   // setIsModalOpen,
   // isModalOpen,
 }) {
   useGenreFetch({ setMovieData });
+
   const { genre } = useParams();
-  function handleMovieSelect(movie) {
-    setMovieSelect(movie);
-    // console.log(`Movies movie:${movieSelect.film_name}`);
-    // setIsModalOpen(true);
-  }
+
+  // function handleMovieSelect(movie) {
+  //   setMovieSelect(movie);
+  //   // console.log(`Movies movie:${movieSelect.film_name}`);
+  //   // setIsModalOpen(true);
+  // }
+
+  const pageTitle = genre.toString();
+
   return (
     <section className="mt-40">
       <GenreNav />
-      <div>{genre}</div>
+      <div>{pageTitle}</div>
       <div className="flex flex-row items-center gap-10 flex-wrap justify-center">
         {" "}
         {movieData.values &&
           movieData.map((movie) => (
             <Link
+              key={movie.id}
               to={`/movieselection/${movie.id}`}
-              onClick={() => handleMovieSelect(movie)}
+              // onClick={() => handleMovieSelect(movie)}
             >
               <img
                 key={movie.id}

@@ -26,97 +26,91 @@ export default function App() {
   return (
     <>
       <BrowserRouter>
-        <body className="grid grid-cols-1 grid-rows-2 justify-items-center overflow-x-hidden">
-          <header>
-            <Header />
-          </header>
-          <main className="row-start-2 row-end-3 grid grid-cols-1">
-            {/*routing system*/}
-            <Routes>
-              {/* lost route */}
-              <Route path="*" element={<NotFoundPage />} />
-              {/* home route */}
-              <Route
-                path={"/"}
-                element={
-                  <Movies
-                    movieData={movieData}
-                    setMovieData={setMovieData}
-                    movieSelect={movieSelect}
-                    setMovieSelect={setMovieSelect}
-                  />
-                }
+        {/*routing system*/}
+        <Routes>
+          {/* lost route */}
+          <Route path="*" element={<NotFoundPage />} />
+          {/* home route */}
+          <Route
+            path={"/"}
+            element={
+              <Movies
+                movieData={movieData}
+                setMovieData={setMovieData}
+                movieSelect={movieSelect}
+                setMovieSelect={setMovieSelect}
               />
+            }
+          />
 
-              {/* actual pages */}
+          {/* actual pages */}
+          <Route
+            path={"movies"}
+            element={
+              <Movies
+                movieData={movieData}
+                setMovieData={setMovieData}
+                movieSelect={movieSelect}
+                setMovieSelect={setMovieSelect}
+              />
+            }
+          />
+          <Route
+            path={"genre/:genre"}
+            element={
+              <MoviesByGenre
+                genreChoice={genreChoice}
+                setGenreChoice={setGenreChoice}
+                movieData={movieData}
+                setMovieData={setMovieData}
+                movieSelect={movieSelect}
+                setMovieSelect={setMovieSelect}
+              />
+            }
+            // if this is a dynamic route the ':genre' bit changes
+            // if I create one additional component and give it the movieData stuff but within it searchPArams.get
+            //  which each use different fetch components
+          />
+          <Route
+            path={"movieselection/:movie_id"}
+            element={
+              <MoviePage
+                setMovieData={setMovieData}
+                movieData={movieData}
+                movieSelect={movieSelect}
+                setMovieSelect={setMovieSelect}
+              />
+            }
+          >
+            <Route
+              path={`:comments`}
+              element={
+                <Comments
+                  // setMovieData={setMovieData}
+                  userData={userData}
+                  setUserData={setUserData}
+                  isModalOpen={isModalOpen}
+                  setModalOpen={setModalOpen}
+                  // movieSelect={movieSelect}
+                />
+              }
+            >
               <Route
-                path={"movies"}
+                path={`comments/:commentid`}
                 element={
-                  <Movies
-                    movieData={movieData}
-                    setMovieData={setMovieData}
-                    movieSelect={movieSelect}
-                    setMovieSelect={setMovieSelect}
+                  <Comments
+                    // setMovieData={setMovieData}
+                    userData={userData}
+                    setUserData={setUserData}
+                    isModalOpen={isModalOpen}
+                    setModalOpen={setModalOpen}
+                    // movieSelect={movieSelect}
                   />
                 }
               />
-              <Route
-                path={"genre/:genre"}
-                element={
-                  <MoviesByGenre
-                    genreChoice={genreChoice}
-                    setGenreChoice={setGenreChoice}
-                    movieData={movieData}
-                    setMovieData={setMovieData}
-                    movieSelect={movieSelect}
-                    setMovieSelect={setMovieSelect}
-                  />
-                }
-                // if this is a dynamic route the ':genre' bit changes
-                // if I create one additional component and give it the movieData stuff but within it searchPArams.get
-                //  which each use different fetch components
-              />
-              <Route
-                path={"movieselection/:movie_id"}
-                element={
-                  <MoviePage
-                    movieData={movieData}
-                    movieSelect={movieSelect}
-                    setMovieSelect={setMovieSelect}
-                  />
-                }
-              >
-                <Route
-                  path={`:comments`}
-                  element={
-                    <Comments
-                      // setMovieData={setMovieData}
-                      userData={userData}
-                      setUserData={setUserData}
-                      isModalOpen={isModalOpen}
-                      setModalOpen={setModalOpen}
-                      // movieSelect={movieSelect}
-                    />
-                  }
-                >
-                  <Route
-                    path={`comments/:commentid`}
-                    element={
-                      <Comments
-                        // setMovieData={setMovieData}
-                        userData={userData}
-                        setUserData={setUserData}
-                        isModalOpen={isModalOpen}
-                        setModalOpen={setModalOpen}
-                        // movieSelect={movieSelect}
-                      />
-                    }
-                  />
-                </Route>
-              </Route>
-            </Routes>{" "}
-          </main>
-        </body>
+            </Route>
+          </Route>
+        </Routes>{" "}
       </BrowserRouter>
     </>
   );

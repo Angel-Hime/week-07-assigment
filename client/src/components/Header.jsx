@@ -16,12 +16,13 @@ export default function Header() {
         </nav>
         <h2 className="h-10 col-start-3 col-end-4 text-3xl">The Cinema Room</h2>
         <nav className="h-10 col-start-4 col-end-5">
-          <button
+          <Link
             className="rounded-2xl bg-[#dcd6d649] hover:bg-[#d8d0d0] hover:shadow-2xl hover:shadow-gray-900 
               focus:outline-2 focus:outline-offset-2 focus:outline-gray-700 focus:shadow-2xl     focus:shadow-gray-900"
+            to="/"
           >
-            <Link to="/">Home</Link>
-          </button>
+            <button className="cursor-pointer">Home</button>
+          </Link>
         </nav>
       </header>
     </>

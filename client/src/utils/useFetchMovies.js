@@ -10,7 +10,7 @@ export default function useFetchUsers({ setMovieData }) {
       // can we use this route to
       // console.log(response);
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
 
       setMovieData(data);
     }

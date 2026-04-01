@@ -20,7 +20,7 @@ export default function Comments({
 
   // get comment id for test
   const { commentid } = useParams();
-  console.log(commentid);
+  // console.log(commentid);
 
   //like comment
   function handleLike(comment) {
@@ -58,6 +58,7 @@ export default function Comments({
           <>
             {movie_id == comment.movie_id ? (
               <div
+                id="comments"
                 key={comment.id}
                 className="flex flex-row items-center justify-evenly"
               >
